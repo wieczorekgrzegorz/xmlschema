@@ -540,7 +540,8 @@ include `Decimal` values (for *decimal* XSD built-in type) you cannot convert th
     >>> import xmlschema
     >>> import json
     >>> xml_document = 'tests/test_cases/examples/collection/collection.xml'
-    >>> print(json.dumps(xmlschema.to_dict(xml_document), indent=4))
+    >>> schema = xmlschema.XMLSchema('tests/test_cases/examples/collection/collection.xsd')
+    >>> print(json.dumps(xmlschema.to_dict(xml_document), schema=schema, indent=4))
     Traceback (most recent call last):
       File "/usr/lib64/python2.7/doctest.py", line 1315, in __run
         compileflags, 1) in test.globs
@@ -569,7 +570,7 @@ using the keyword argument *decimal_type*:
 
 .. doctest::
 
-    >>> print(json.dumps(xmlschema.to_dict(xml_document, decimal_type=str), indent=4))  # doctest: +SKIP
+    >>> print(json.dumps(xmlschema.to_dict(xml_document, decimal_type=str, schema=schema), indent=4))  # doctest: +SKIP
     {
         "object": [
             {
