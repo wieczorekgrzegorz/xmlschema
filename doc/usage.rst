@@ -280,8 +280,8 @@ Decoded data can be encoded back to XML:
 
 .. doctest:: collection
 
-    >>> obj = schema.decode('tests/test_cases/examples/collection/collection.xml')
-    >>> collection = schema.encode(obj)
+    >>> obj = xs.decode('tests/test_cases/examples/collection/collection.xml')
+    >>> collection = xs.encode(obj)
     >>> collection
     <Element '{http://example.com/ns/collection}collection' at ...>
     >>> print(xmlschema.etree_tostring(collection, {'col': 'http://example.com/ns/collection'}))
